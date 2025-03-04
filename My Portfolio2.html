@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Portfolio Website">
+  <title>Swetapadma Swain| My Portfolio</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: #1E2A47;
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 25px;
+    }
+
+    nav ul li a {
+      color: #FFF;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul li a:hover {
+      color: #7a33ff;
+    }
+
+    /* Home Section */
+    .hero {
+      background: linear-gradient(135deg, #4c56af, #ff47e0);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.932);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* About Section */
+    #about {
+      padding: 60px 20px;
+      background-color: #fff;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #dd33ff;
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    #about h3 {
+      font-size: 1.6rem;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    #about ul {
+      text-align: left;
+      display: inline-block;
+      font-size: 1.1rem;
+      margin-left: 20px;
+      color: #666;
+    }
+
+    /* Skills Section */
+    #skills {
+      background-color: #1E2A47;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #skills h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #ff3333;
+    }
+
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background-color: #4133ff;
+      color: white;
+      padding: 20px 30px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .skill:hover {
+      background-color: #D24D29;
+    }
+
+    /* Projects Section */
+    #projects {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #projects h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #1E2A47;
+    }
+
+    .project-card {
+      display: inline-block;
+      width: 250px;
+      margin: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .project-card h3 {
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #1E2A47;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    form button {
+      background-color: #FF5733;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #D24D29;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #1E2A47;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Swetapadma Swain</h1>
+      <p>A web developer who is passionate about creating beautiful and functional websites.</p>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Swetapadma Swain a web developer with a strong passion for front-end and back-end technologies. I have build my Experience to create some innovative and useful websites by using HTML, CSS, JavaScript, React, and Node.js.</p>
+    <p></p>
+    <p>I am always want to know new things and eager to learn new technologies and develop my skills</p>
+    <h3>Education</h3>
+    <ul>
+        <li>Bachalor In Computer Science and Engineering:- ABIT CDA, Cuttack (2023-present)</li>
+       <li>12th Grade:- SVM college, Jagatsinghpur (2021-2023)</li> 
+      <li>10th grade:- Jagatsinghpur Public School, Jagatsinghpur (2020-2021)</li>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">Git</div>
+      <div class="skill">MySQL</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <a href="" alt="Project 1">
+      <h3>Tic-Tac-Toe Web Application</h3>
+      <p>It is a web application by using HTML,CSS and Javascript in which the implemented functions are used to handle users clicks,track game state and check for winning conditions. </p>
+    </div>
+    <div class="project-card">
+      <a href="" alt="Project 2">
+      <h3>Personal Portfolio Website</h3>
+      <p>A responsive portfolio website which showcasing my education,skills and projects.The website features smooth transition and interactive navigation by using HTML,CSS and Javascript</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form" action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Swetapadma Swain| All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Simple form validation
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+      
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill out all fields.");
+      } else {
+        alert("Thank you for your message, " + name + "!");
+      }
+    });
+  </script>
+
+</body>
+</html>
